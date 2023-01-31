@@ -1,0 +1,128 @@
+@import "../../gobalStyle.scss";
+.portfolio{
+    background-color:rgb(6, 36, 36) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include mobile {
+        height: 500px !important;
+        overflow: hidden;
+    }
+    .circleContainer{
+        position: absolute;
+        bottom: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        @include mobile{
+                bottom: 2vh;            
+        }
+        .circle{
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            border: 1px solid white;
+            background-color: white;
+            cursor: pointer;
+            opacity: .5;
+            transition: 1s all ease;
+            &.active{
+                opacity: 1;   
+            }
+        }
+       
+        
+    }
+    .arrow{
+        position: absolute;
+        height: 50px;
+        cursor: pointer;
+        &.left{
+            left: 10%;
+            transform: rotate(180deg);
+        }
+        &.right{
+            right: 10%;
+        }
+        
+            
+    }
+
+    .slider{
+        height: 350px;
+        display: flex;
+        position: absolute;
+        left: 0;
+        transition: 2s all ease;
+        
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .item{
+                 width: 700px;
+                 height: 100%;
+                 background-color: white;
+                 border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include mobile{
+                    width: 400px;
+                }
+                .left{
+                    height: 100%;
+                    flex: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .leftController{
+                        height: 90%;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding: 0 4px;
+                        
+                        .title{
+                            font-weight: 500;
+                            font-size: 20px;
+                        }
+                        .link{
+                            padding: 10px;
+                            background-color: rgb(6, 36, 36) ;
+                            border-radius: 10px;
+                            font-weight: 100;
+
+                            a{
+                                color: white;
+                                text-decoration: none;
+                            }
+                        }
+                       
+                    }
+                }    
+                .right{
+                    flex: 4;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    overflow-y: hidden;
+                    background: rgb(217, 231, 236);
+                    img{
+                        width: 80%;
+                        border-radius:10%;
+                        mix-blend-mode: multiply;
+                        
+                    } 
+                }
+            }
+
+        }
+    }
+}
