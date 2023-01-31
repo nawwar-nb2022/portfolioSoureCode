@@ -1,36 +1,10 @@
 import { HubRounded } from "@mui/icons-material";
 import { useState } from "react";
 import "./portfolio.scss"
-
+import works from  "../../data/works"
 const Portfolio = () => {
-    const image =[
-        {
-            url:"Assets/slider.jpg",
-            title:"slider",
-            desc:"basic html js slider ",
-            link:"https://slider-n.netlify.app"
-        },
-        {
-            url:"Assets/Quiz.jpg",
-            title:"Quiz app",
-            desc:"js",
-            link:"https://quiz123n.netlify.app"
-        },
-        {
-            url:"Assets/dragNdrop.jpg",
-            title:"drag and drop",
-            desc:"using canvas element in html with js",
-            link:"https://dragdrop123n.netlify.app"
-        },
-        {
-            url:"Assets/vege.jpg",
-            title:"vegetarian",
-            desc:"react app using reactHooks and work",
-            link:"https://vegtest.netlify.app"
-        }
-    ]
     const [slide , setSlide] =useState(0);
-    const len = image.length - 1
+    const len = works.length - 1
     const LeftClick = ()=>{
         if(slide == 0 ){
             setSlide(len*100)
@@ -50,7 +24,7 @@ const Portfolio = () => {
     return ( 
         <div className="portfolio" id="portfolio">
             <div className="slider" style={{transform:`translateX(-${slide}vw)`}}>
-        { image.map( (img,rowId)=>{
+        { works.map( (img,rowId)=>{
             return(
                 <div className="container" key={rowId}>
                     <div className="item">
@@ -73,7 +47,7 @@ const Portfolio = () => {
 
             </div>
             <div className="circleContainer">
-            {image.map((im,rowId)=>{
+            {works.map((im,rowId)=>{
                 return(
                     <div className= {slide == rowId*100?"circle active":"circle"}
                     key={rowId}
